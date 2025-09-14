@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://harshini:harshini%40123@cluster0.vhlyb9n.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+mongoose.connect(process.env.MONGO_URI).then(()=>{
   console.log("Connected to MongoDB");
 }).catch((err)=>{
   console.log("Error connecting to MongoDB",err);
